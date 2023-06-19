@@ -1,17 +1,19 @@
 //Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.
 
 //importa el schema y modelo de moongose
-const {Schema, model} = require('mongoose');
+const {Schema, model, SchemaTypes} = require('mongoose');
 
 //Crea un schema para mongodb
 const DriverPerCarSchema = new Schema({
-    driver_id: {
-        type: String,
-        required: true
+    driver_in_service_id:  {
+        type: SchemaTypes.ObjectId,
+        required: true,
+        ref: "DriverInService"
     },
-    car_id: {
-        type: String,
-        required: true
+    institution_car_id:  {
+        type: SchemaTypes.ObjectId,
+        required: true,
+        ref: "InstitutionCar"
     }
 });
 

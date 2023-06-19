@@ -69,6 +69,7 @@ try {
 }
 */
 
+/*
 try {
 
     const Car = require('./models/Car.js');
@@ -95,7 +96,45 @@ try {
     console.log(e.message);
 
 }
+*/
 
+
+
+try {
+
+    const Driver = require('./models/Driver.js');
+
+    async function createDrivers() {
+
+        const newDriver = new Driver({
+            user: "D10282876",
+            document_type: "Dni",
+            document_number: "75524555",
+            names: "Camila Fefe",
+            last_names: "Milagros Pink",
+            email: "camila@gmail.com",
+            address: "Surco",
+            phone_number: "724917482",
+            gender: "F",
+            age: 21,
+            state: 'Out of service'
+        });
+
+        console.log(newDriver);
+
+        await newDriver.save().then(console.log('Guardado'));
+
+        console.log(newDriver);
+
+    }
+
+    createDrivers();
+
+} catch (e) {
+
+    console.log(e.message);
+
+}
 
 /*    
 const ClassSchedule = require('./models/ClassSchedule.js');

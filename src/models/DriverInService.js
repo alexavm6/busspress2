@@ -2,9 +2,10 @@
 
 //importa el schema y modelo de moongose
 const {Schema, model} = require('mongoose');
+const bcrypt = require('bcryptjs'); 
 
 //Crea un schema para mongodb
-const DriverSchema = new Schema({
+const DriverInServiceSchema = new Schema({
     user: {
         type: String,
         required: true
@@ -29,6 +30,10 @@ const DriverSchema = new Schema({
         type: String,
         required: true
     },
+    password: {
+        type: String,
+        required: true
+    },
     address: {
         type: String,
         required: true
@@ -44,15 +49,19 @@ const DriverSchema = new Schema({
     age: {
         type: Number,
         required: true
-    },
-    state: {
-        type: String,
-        required: true
     }
 });
 
+//coloca meotodos de encriptacion de password al schema
+DriverInServiceSchema.methods.encryptPassword = async password => {
+    const salt = await bcrypt.genSalt(10);
+    return await bcrypt.hash(password, salt);
+};
 
+DriverInServiceSchema.methods.matchPassword = async function(password) {
+    return await bcrypt.compare(password, this.password);
+}
 
 //crea un modelo con el nombre elegido y la coleccion donde se guardará
-module.exports = model('Driver', DriverSchema, 'drivers');
+module.exports = model('DriverInService', DriverInServiceSchema, 'driversInService');
 
