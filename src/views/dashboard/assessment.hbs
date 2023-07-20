@@ -2,37 +2,36 @@
 <! ––muestra vista para valorar a los conductores––>
 
 
-<section class="dashboard">
-    <div class="top">
-        <i class="uil uil-bars sidebar-toggle"></i>
-        
-    </div>
-    <div class="dash-content">
-        <div class="overview">
-            <div class="title">
-                <i class="uil uil-thumbs-up"></i>
-                <span class="text">Valoracion</span>
+<section class="card ajuste">
+<div class="card-body">
+
+    <h1>Valoración</h1>
+    
+    <br>    
+        {{#each carSchedulesArray}}
+            <div class="card mb-3 "  >
+            <img class="card-img-top" src="/img/valorar.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Dia: {{carScheduleUser.dayString}}</h5>
+                <p class="card-text">Fecha: {{carScheduleUser.dayDate}}</p>
+                <p class="card-text">Hora de recogo: {{carScheduleUser.pick_hour}}</p>
+                <p class="card-text">Conductor: {{driverPerCar.driver_in_service_id.names}}, {{driverPerCar.driver_in_service_id.last_names}}</p>
+                <p class="card-text">Matrícula: {{driverPerCar.institution_car_id.license_plate_number}}</p>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d31224.81724364963!2d-77.08765922641406!3d-11.967428665794317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m3!3m2!1d-11.9897834!2d-77.0627354!4m3!3m2!1d-11.983842899999999!2d-77.0645545!4m3!3m2!1d-11.9565358!2d-77.06882019999999!4m5!1s0x9105ce278995c973%3A0xd9901efb2bbafe5a!2sUTP%20Sede%20Norte%2C%20Au.%20Panamericana%20Nte.%206377%2C%20Los%20Olivos%2015306!3m2!1d-11.9530354!2d-77.0701052!5e0!3m2!1ses!2spe!4v1689712835154!5m2!1ses!2spe" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe>
+
+                <p></p>
+
+                    <a href="/assessment/driver/{{driverPerCar.driver_in_service_id._id}}"><button type="submit" class="btn btn-warning m-3">Valorar Conductor</button></a>
+
+                    
+
+                    <a href="/assessment/carscheduleuser/{{carScheduleUser._id}}"><button type="submit" class="btn btn-warning m-3">Valorar Viaje</button></a>
+                    
+                    
             </div>
-            <div class="boxes">
-
-                {{#each horariosDeCarroUsuarioVista}}
-
-                <div class="box ">
-                    <i class="uil uil-thumbs-up"></i>
-                    <span class="text">Dia</span>
-                    <span class="number">{{day}}</span>
-                    <i class="uil uil-thumbs-up"></i>
-                    <span class="text">Hora de recogo</span>
-                    <span class="number">{{pick_hour}}</span>
-
-                    <a href="#"><button type="button" class="btn btn-info">Valora aquí</button></a>
-
-                </div>
-
-                {{/each}}
-                
             </div>
-        </div>
-        
-    </div>
+        {{/each}}
+    
+</div>
 </section>

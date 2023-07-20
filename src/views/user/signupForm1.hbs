@@ -1,0 +1,54 @@
+<! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
+<! ––muestra vista para ingresar nuevo usuario––>
+<main class="ajuste">
+<div class="row">
+  <div class="col-md-4 mx-auto">
+    <div class="card bg-black text-white">
+      <div class="card-header pt-5">
+        <h4 class="text-center">
+          Registrate 1
+        </h4>
+      </div>
+      <img
+        class=""
+        src="/img/busspress_logo_blanco.png"
+        alt="Logo"
+      />
+      <div class="card-body">
+        <form action="/user/signupform1" method="POST">
+
+
+          <div class="mb-3">
+            <label for="institution">Estas son las instituciones inscritas:</label>
+            <select class="form-control" name="institution">
+                {{#each institutions}}
+                <option>{{name}}</option>
+                {{/each}}
+            </select>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="user">Ingresa tu código de Alumno:</label>
+            <input
+              type="text"
+              class="form-control bg-dark text-white"
+              name="user"
+              placeholder="Ingresa tu código de Alumno"
+            />
+          </div>
+
+          
+
+          <button class="btn btn-success btn-block">
+            Siguiente
+          </button>
+
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</main>

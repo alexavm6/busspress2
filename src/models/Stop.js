@@ -1,22 +1,27 @@
 //Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.
 
 //importa el schema y modelo de moongose
-const {Schema, model} = require('mongoose');
+const {Schema, model, SchemaTypes} = require('mongoose');
 
 //Crea un schema para mongodb
 const StopSchema = new Schema({
-    car_schedules_drivers_id: {
-        type: String,
-        required: true
+    car_schedule_driver_id: {
+        type: SchemaTypes.ObjectId,
+        required: true,
+        ref: "CarScheduleDriver"
     },
     user_id:  {
-        type: String,
-        required: true
+        type: SchemaTypes.ObjectId,
+        required: true,
+        ref: "User"
     },
     pick_hour:  {
         type: Date,
         required: true
     }
+},
+{
+    timestamps: true
 });
 
 

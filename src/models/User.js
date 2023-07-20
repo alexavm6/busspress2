@@ -67,6 +67,9 @@ const UserSchema = new Schema({
         type: SchemaTypes.ObjectId,
         ref: "Institution"
     }
+},
+{
+    timestamps: true
 });
 
 //coloca meotodos de encriptacion de password al schema

@@ -4,41 +4,51 @@
 <! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
 <! ––muestra vista de rutas del usuario––>
 
-<section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-            
-        </div>
-        <div class="dash-content">
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-files-landscapes"></i>
-                    <span class="text">Rutas</span>
-                </div>
-                <div class="boxes">
-                    <div class="box ">
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Miercoles Mayo 06 2023</span>
-                        <span class="number">10 km</span>
-                        <span class="number">Hora de recogo 07:00 AM</span>
-                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3903.2948975189593!2d-77.07752442394884!3d-11.954072890183912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x9105ce1f7d807847%3A0x88fe05bf2e9c7979!2sMercado%20Enrique%20Milla%20Ochoa!3m2!1d-11.9571332!2d-77.0798367!4m5!1s0x9105d1d877f532d7%3A0x8db19fe8e1f40feb!2sUniversidad%20Tecnol%C3%B3gica%20del%20Per%C3%BA%2C%20Panamericana%20Norte%2C%20Av.%20Alfredo%20Mendiola%206377%2C%20Los%20Olivos%2015306!3m2!1d-11.952889899999999!2d-77.07019199999999!5e0!3m2!1ses!2spe!4v1683099969177!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="box ">
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Jueves Mayo 07 2023</span>
-                        <span class="number">20 km</span>
-                        <span class="number">Hora de recogo 06:00 AM</span>
-                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3903.2948975189593!2d-77.07752442394884!3d-11.954072890183912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x9105ce1f7d807847%3A0x88fe05bf2e9c7979!2sMercado%20Enrique%20Milla%20Ochoa!3m2!1d-11.9571332!2d-77.0798367!4m5!1s0x9105d1d877f532d7%3A0x8db19fe8e1f40feb!2sUniversidad%20Tecnol%C3%B3gica%20del%20Per%C3%BA%2C%20Panamericana%20Norte%2C%20Av.%20Alfredo%20Mendiola%206377%2C%20Los%20Olivos%2015306!3m2!1d-11.952889899999999!2d-77.07019199999999!5e0!3m2!1ses!2spe!4v1683099969177!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="box ">
-                        <i class="uil uil-share"></i>
-                        <span class="text">Viernes Mayo 08 2023</span>
-                        <span class="number">30 km</span>
-                        <span class="number">Hora de recogo 10:00 AM</span>
-                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3903.2948975189593!2d-77.07752442394884!3d-11.954072890183912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x9105ce1f7d807847%3A0x88fe05bf2e9c7979!2sMercado%20Enrique%20Milla%20Ochoa!3m2!1d-11.9571332!2d-77.0798367!4m5!1s0x9105d1d877f532d7%3A0x8db19fe8e1f40feb!2sUniversidad%20Tecnol%C3%B3gica%20del%20Per%C3%BA%2C%20Panamericana%20Norte%2C%20Av.%20Alfredo%20Mendiola%206377%2C%20Los%20Olivos%2015306!3m2!1d-11.952889899999999!2d-77.07019199999999!5e0!3m2!1ses!2spe!4v1683099969177!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
+<section class="card ajuste">
+<div class="card-body">
+
+    <h1>Rutas</h1>
+
+    <br>
+
+    <a href="/generatepdf/carscheduleuser"><button type="submit" class="btn btn-info m-3">Generar PDF de Rutas</button></a>
+
+    <a href="/generateexcel/carscheduleuser"><button type="submit" class="btn btn-info m-3">Generar Excel de Rutas</button></a>
+    
+    <br>
+
+    
+        {{#each carSchedulesArray}}
+            <div class="card mb-3 "  >
+            <img class="card-img-top ruta" src="/img/ruta.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Dia: {{carScheduleUser.dayString}}</h5>
+                <p class="card-text">Fecha: {{carScheduleUser.dayDate}}</p>
+                <p class="card-text">Hora de recogo: {{carScheduleUser.pick_hour}}</p>
+                <p class="card-text">Conductor: {{driverPerCar.driver_in_service_id.names}}, {{driverPerCar.driver_in_service_id.last_names}}</p>
+                <p class="card-text">Matrícula: {{driverPerCar.institution_car_id.license_plate_number}}</p>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d31224.81724364963!2d-77.08765922641406!3d-11.967428665794317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e0!4m3!3m2!1d-11.9897834!2d-77.0627354!4m3!3m2!1d-11.983842899999999!2d-77.0645545!4m3!3m2!1d-11.9565358!2d-77.06882019999999!4m5!1s0x9105ce278995c973%3A0xd9901efb2bbafe5a!2sUTP%20Sede%20Norte%2C%20Au.%20Panamericana%20Nte.%206377%2C%20Los%20Olivos%2015306!3m2!1d-11.9530354!2d-77.0701052!5e0!3m2!1ses!2spe!4v1689712835154!5m2!1ses!2spe" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="mapa"></iframe>
+
+                <br>
+
+                    <form action="/route/triptaked" method="POST">
+                    <button type="submit" class="btn btn-warning">Viaje Tomado</button>
+                    </form>
+
+                
+
             </div>
-            
-        </div>
-    </section>
+            </div>
+        {{/each}}
+    
+
+
+
+    
+
+
+
+
+</div>
+</section>

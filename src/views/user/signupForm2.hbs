@@ -1,0 +1,50 @@
+<! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
+<! ––muestra vista para ingresar nuevo usuario––>
+<main class="ajuste">
+<div class="row">
+  <div class="col-md-17 mx-auto">
+    <div class="card bg-black text-white">
+      
+      <div class="card-body">
+        <form action="/user/signupform2" method="POST">
+
+          <div class="mb-17">
+            <h4 class="text-center">
+            Registrate 2
+            </h4>
+            <br>
+            <p>Bienvenido {{institutionStudentFound.names}}, te encuentras en la lista de alumnos de la institucion {{institutionFound.name}}</p>
+            <p>Toda la información que tiene tu institución, se compratirá con Busspress</p>
+          </div>
+          
+          <div class="mb-17">
+            <label for="cycles">Ingresa los ciclos que quieres el servicio:</label>
+            <select multiple required class="form-control" name="cycles">
+                {{#each cycleSchedulesByInstitutionArray}}
+                <option value="{{_id}}">{{cycle}}: {{cycle_start}} - {{cycle_end}}</option>
+                {{/each}}
+            </select>
+          </div>
+
+          <div class="mb-17">
+            <label for="card">Ingresa el numero de tu tarjeta:</label>
+            <input
+              type="text"
+              class="form-control bg-dark text-white"
+              name="card"
+              placeholder="Nombre de la institucion"
+            />
+          </div>
+          
+          <br>
+          <button class="btn btn-success btn-block">
+            Registrar
+          </button>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
+</main>

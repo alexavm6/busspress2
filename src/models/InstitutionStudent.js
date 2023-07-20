@@ -63,6 +63,9 @@ const InstitutionStudentSchema = new Schema({
         required: true,
         ref: "Institution"
     }
+},
+{
+    timestamps: true
 });
 
 

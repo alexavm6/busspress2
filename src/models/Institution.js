@@ -42,6 +42,9 @@ const InstitutionSchema = new Schema({
         type: Number,
         required: true
     }
+},
+{
+    timestamps: true
 });
 
 InstitutionSchema.methods.encryptPassword = async password => {

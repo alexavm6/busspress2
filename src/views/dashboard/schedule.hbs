@@ -1,36 +1,25 @@
 <! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
 <! ––muestra vista de horario del usuario––>
 
-<section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-            
+<section class="card ajuste">
+<div class="card-body">
+
+
+    <h1>Horario</h1>
+
+    <p></p>
+    
+    {{#each classSchedules}}
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/img/horarios.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Día: {{day}}</h5>
+            <p class="card-text">Hora de Inicio: {{start_hour}}</p>
+            <p class="card-text">Hora de Fin: {{end_hour}}</p>
+            <p class="card-text">Clase: {{class}}</p>
         </div>
-        <div class="dash-content">
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-schedule"></i>
-                    <span class="text">Horario</span>
-                </div>
-                <div class="boxes">
-                    {{#each horarios}}
-                    <div class="box ">
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Dia</span>
-                        <span class="number">{{day}}</span>
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Clase</span>
-                        <span class="number">{{class}}</span>
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Inicio de CLase</span>
-                        <span class="number">{{start_hour}}</span>
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Fin de clase</span>
-                        <span class="number">{{end_hour}}</span>
-                    </div>
-                    {{/each}}
-                </div>
-            </div>
-            
         </div>
-    </section>
+    {{/each}}
+
+</div>
+</section>

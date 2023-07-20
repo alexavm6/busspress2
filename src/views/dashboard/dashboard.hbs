@@ -1,81 +1,73 @@
 <! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
 <! ––muestra vista dashboard del usuario––>
 
-<section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-            
+
+
+
+<section class="card ajuste">
+<div class="card-body">
+    <h1>Dashboard</h1>
+    
+    <br>
+
+    <a href="/dashboard/firstSteps"><button type="button" class="btn btn-info">Primeros pasos</button></a>
+
+    <p></p>
+    
+    <div class="card-deck">
+    <div class="card">
+        <img class="card-img-top" src="/img/usuario.jpg" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">Información de Usuario</h5>
+        <p class="card-text">Usuario: {{user_global.user}}</p>
+        <p class="card-text">Usuario: {{user_global.email}}</p>
         </div>
-        <div class="dash-content">
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-estate"></i>
-                    <span class="text">Dashboard</span>
-                </div>
-
-                <a href="/dashboard/firstSteps"><button type="button" class="btn btn-info">Primeros pasos</button></a>
-
-                
-
-                <div class="boxes">
-                    <div class="box">
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Dirección</span>
-                        <span class="number">{{user_global.address}}</span>
-                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.7629755123644!2d-77.07302762394825!3d-11.99089604086501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce50eb1254d7%3A0x3bd758b9b67a360!2sAv.%20Carlos%20Izaguirre%2C%20San%20Mart%C3%ADn%20de%20Porres!5e0!3m2!1ses!2spe!4v1683098100547!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="box">
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Campus</span>
-                        <span class="number">{{user_global.campus}}</span>
-                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7806.575999071027!2d-77.07516350888858!3d-11.95455112942387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105d1d877f532d7%3A0x8db19fe8e1f40feb!2sUniversidad%20Tecnol%C3%B3gica%20del%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1683098283682!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    
-                    <div class="box ">
-                        <i class="uil uil-share"></i>
-                        <span class="text">Carrera</span>
-                        <span class="number">{{user_global.college_career}}</span>
-                    </div>
-                    <div class="box ">
-                        <i class="uil uil-share"></i>
-                        <span class="text">Correo</span>
-                        <span class="number">{{user_global.email}}</span>
-                    </div>
-                    <div class="box ">
-                        <i class="uil uil-share"></i>
-                        <span class="text">Genero</span>
-                        <span class="number">{{user_global.gender}}</span>
-                    </div>
-                    <div class="box ">
-                        <i class="uil uil-share"></i>
-                        <span class="text">Ciclo</span>
-                        <span class="number">{{user_global.course}}</span>
-                    </div>
-                    <div class="box ">
-                        <i class="uil uil-share"></i>
-                        <span class="text">Edad</span>
-                        <span class="number">{{user_global.age}}</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-tachometer-fast-alt"></i>
-                    <span  id='RutaDeHoy' class="text">Ruta de Hoy</span>
-                </div>
-                <div class="boxes">
-                    <div class="box box1">
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Camino a tomar</span>
-                        <span class="number">3 paradas</span>
-                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d3903.2948975189593!2d-77.07752442394884!3d-11.954072890183912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x9105ce1f7d807847%3A0x88fe05bf2e9c7979!2sMercado%20Enrique%20Milla%20Ochoa!3m2!1d-11.9571332!2d-77.0798367!4m5!1s0x9105d1d877f532d7%3A0x8db19fe8e1f40feb!2sUniversidad%20Tecnol%C3%B3gica%20del%20Per%C3%BA%2C%20Panamericana%20Norte%2C%20Av.%20Alfredo%20Mendiola%206377%2C%20Los%20Olivos%2015306!3m2!1d-11.952889899999999!2d-77.07019199999999!5e0!3m2!1ses!2spe!4v1683099969177!5m2!1ses!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="/img/personal.png" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">Información Personal</h5>
+        <p class="card-text">Nombres y Apellidos: {{user_global.names}}, {{user_global.last_names}}</p>
+        <p class="card-text">Dirección: {{user_global.address}}</p>
+        <p class="card-text">Genero: {{user_global.gender}}</p>
+        <p class="card-text">Edad: {{user_global.age}}</p>
         </div>
-        
-    </section>
+    </div>
+    <div class="card">
+        <img class="card-img-top" src="/img/institucional.png" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title">Información Institucional</h5>
+        <p class="card-text">Institución: {{institutionName}}</p>
+        <p class="card-text">Campus: {{user_global.campus}}</p>
+        <p class="card-text">Carrera Universitaria: {{user_global.college_career}}</p>
+        <p class="card-text">Ciclo: {{user_global.course}}</p>
+        <p class="card-text">Ciclos Inscritos: {{user_global.cycles}}</p>
+        </div>
+    </div>
+    </div>
+
+<br>
+
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/img/viaje.png" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Control de Viajes</h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Viajes Totales: {{tripControl.total_trips}}</li>
+            <li class="list-group-item">Viajes Tomados: {{tripControl.taken_trips}}</li>
+            <li class="list-group-item">Viajes No Tomados: {{tripControl.untaken_trips}}</li>
+        </ul>
+    </div>
+
+
+
+    
+
+
+
+
+</div>
+</section>
 
 

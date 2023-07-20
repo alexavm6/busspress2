@@ -12,7 +12,8 @@ const {
     login, 
     logout,
     renderSignup,
-    signup
+    signupForm1,
+    signupForm2
 } = require('../controllers/user.controller');
 
 //dependiendo de la ruta que ingrese renderizará una vista
@@ -24,7 +25,9 @@ router.get('/user/logout', isAuthenticated, logout);
 
 router.get('/user/signup', renderSignup);
 
-router.post('/user/signup', signup);
+router.post('/user/signupform1', signupForm1);
+
+router.post('/user/signupform2', signupForm2);
 
 
 

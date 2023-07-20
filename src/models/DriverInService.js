@@ -1,7 +1,7 @@
 //Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.
 
 //importa el schema y modelo de moongose
-const {Schema, model} = require('mongoose');
+const {Schema, model, SchemaTypes} = require('mongoose');
 const bcrypt = require('bcryptjs'); 
 
 //Crea un schema para mongodb
@@ -49,7 +49,19 @@ const DriverInServiceSchema = new Schema({
     age: {
         type: Number,
         required: true
+    },
+    score: {
+        type: Number,
+        required: true
+    },
+    institution_id:  {
+        type: SchemaTypes.ObjectId,
+        required: true,
+        ref: "Institution"
     }
+},
+{
+    timestamps: true
 });
 
 //coloca meotodos de encriptacion de password al schema

@@ -27,6 +27,9 @@ const InstitutionTicketSchema = new Schema({
         required: true,
         ref: "Institution"
     }
+},
+{
+    timestamps: true
 });
 
 //crea un modelo con el nombre elegido y la coleccion donde se guardará

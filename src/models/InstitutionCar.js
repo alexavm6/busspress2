@@ -14,6 +14,9 @@ const InstitutionCarSchema = new Schema({
         required: true,
         ref: "Institution"
     }
+},
+{
+    timestamps: true
 });
 
 

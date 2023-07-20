@@ -1,38 +1,54 @@
 <! ––Autores: Vasquez Miguel, Alexandra Ivana & Barandiaran Japaja, Jhossepy Alexander & Marquez Mendez, Andrea Janet.––>
 <! ––muestra estadisticas del usuario––>
 
-<section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-            
-        </div>
-        <div class="dash-content">
-            <div class="overview">
-                <div class="title">
-                    <i class="uil uil-chart"></i>
-                    <span class="text">Estadisticas</span>
-                </div>
-                {{#each control}}
-                    <div class="boxes">
-                    <div class="box ">
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Viajes Totales a Tomar</span>
-                        <span class="number">{{total_trips}}</span>
-                    </div>
-                    <div class="box ">
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Viajes Tomados</span>
-                        <span class="number">{{taken_trips}}</span>
-                    </div>
-                    <div class="box ">
-                        <i class="uil uil-share"></i>
-                        <span class="text">Viajes No Tomados</span>
-                        <span class="number">{{untaken_trips}}</span>
-                    </div>
-                </div>
-                {{/each}}
-                
+<section class="card ajuste">
+<div class="card-body">
+
+    <h1>Estadísticas</h1>
+
+    <div class="col-8 offset-2 my-5">
+        <div class="card">
+            <div class="card-body">
+                <h5>Gráfico 1: Puntaje por conductor</h5>
+                <hr>
+                <canvas id="myChart1"></canvas>
             </div>
-            
         </div>
-    </section>
+    </div>
+
+    <br>
+
+    <div class="col-8 offset-2 my-5">
+        <div class="card">
+            <div class="card-body">
+                <h5>Gráfico 2: Nuevos usuarios por mes</h5>
+                <hr>
+                <canvas id="myChart2"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-8 offset-2 my-5">
+        <div class="card">
+            <div class="card-body">
+                <h5>Gráfico 3: Nivel de satisfacción en el viaje</h5>
+                <hr>
+                <canvas id="myChart3"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-8 offset-2 my-5">
+        <div class="card">
+            <div class="card-body">
+                <h5>Gráfico 4: Control de viajes</h5>
+                <hr>
+                <canvas id="myChart4"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+</div>
+</section>

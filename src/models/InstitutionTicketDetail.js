@@ -18,6 +18,9 @@ const InstitutionTicketDetailSchema = new Schema({
         type: String,
         required: true
     }
+},
+{
+    timestamps: true
 });
 
 //crea un modelo con el nombre elegido y la coleccion donde se guardará

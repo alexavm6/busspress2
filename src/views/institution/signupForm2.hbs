@@ -4,84 +4,39 @@
 <div class="row">
   <div class="col-md-4 mx-auto">
     <div class="card bg-black text-white">
-      <div class="card-header pt-5">
-        <h4 class="text-center">
-          Registra a tu institución 2
-        </h4>
-      </div>
+      
       <div class="card-body">
-        <form action="/institution/signupform2" method="POST">
+        <form action="/user/signupform2" method="POST">
+
           <div class="mb-3">
-            <p>Monto total a pagar: S/.{{total}}</p>
-          </div>
-          <div class="mb-3">
-            <p>Costo de matricula para instituciones: S/.{{institutionRegistrationPrice}}</p>
-          </div>
-          <div class="mb-3">
-            <p>Monto total por semanas del servicio: S/.{{totalSemanasDelServicio}}</p>
-          </div>
-          <div class="mb-3">
-            <p>Monto total por cantidad de carros: S/.{{totalPorCantidadDeCarros}}</p>
+            <p>Bienvenido {{institutionStudentFound.names}}, te encuentras en la lista de alumnos de la institucion {{intitutionFound.name}}</p>
+            <p>Toda la información que tiene tu institución, se compratirá con Busspress</p>
           </div>
           
           <div class="mb-3">
-            <label for="name">Nombre de la institucion:</label>
+            <label for="cycles">Ingresa los ciclos que quieres el servicio:</label>
+            <select multiple required class="form-control" name="cycles">
+                {{#each cycleSchedulesByInstitutionArray}}
+                <option>{{cycle}}: {{cycle_start}} - {{cycle_end}}</option>
+                {{/each}}
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="card">Ingresa el numero de tu tarjeta:</label>
             <input
               type="text"
               class="form-control bg-dark text-white"
-              name="name"
+              name="card"
               placeholder="Nombre de la institucion"
             />
           </div>
-          <div class="mb-3">
-            <label for="user">Usuario de la Institución:</label>
-            <input
-              type="text"
-              class="form-control bg-dark text-white"
-              name="user"
-              placeholder="Usuario de la Institución"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="password">Contraseña:</label>
-            <input
-              type="password"
-              class="form-control bg-dark text-white"
-              name="password"
-              placeholder="Contraseña"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="acronym">Acrónimo:</label>
-            <input
-              type="text"
-              class="form-control bg-dark text-white"
-              name="acronym"
-              placeholder="Acrónimo"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="ruc">RUC:</label>
-            <input
-              type="text"
-              class="form-control bg-dark text-white"
-              name="ruc"
-              placeholder="RUC"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="email">Email:</label>
-            <input
-              type="text"
-              class="form-control bg-dark text-white"
-              name="email"
-              placeholder="Email"
-            />
-          </div>
+          
 
           <button class="btn btn-success btn-block">
             Siguiente
           </button>
+
         </form>
       </div>
       

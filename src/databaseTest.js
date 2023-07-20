@@ -13,9 +13,10 @@ mongoose.connect(MONGODB_URI, {
     .catch(err => console.log(err)); 
 
 
-
+    console.log(user_global.names)
 
 /*
+
 try {
 
     const Price = require('./models/Price.js');
@@ -23,8 +24,8 @@ try {
     async function createPrice() {
 
         const PriceOne = new Price({
-            name: 'Institution Unit Week',
-            price: 10
+            name: 'User Registration',
+            price: 100
         });
 
         await PriceOne.save().then(console.log('Guardado'));
@@ -35,10 +36,112 @@ try {
 
 } catch (e) {
 
-    console.log(e.message);
+    console.log(e);
+
+}
+
+*/
+
+
+/*
+try {
+
+    const TripControl = require('./models/TripControl.js');
+
+    async function createControl() {
+
+        const TripControlOne = new TripControl({
+            total_trips: 24,
+            taken_trips: 0,
+            untaken_trips: 24,
+            user_id:  "64b5bcd249fbbd28ac2ac8c7"
+        });
+
+        await TripControlOne.save().then(console.log('Guardado'));
+
+    }
+
+    createControl();
+
+} catch (e) {
+
+    console.log(e);
 
 }
 */
+
+/*
+for (let index = 0; index < 3; index++) {
+    
+    try {
+
+        const CarScheduleUser = require('./models/CarScheduleUser.js');
+    
+        async function createCarScheduleUser() {
+    
+            const CarScheduleUserOne = new CarScheduleUser({
+                dayDate: "2023-04-02T00:00:00.000+00:00",
+                dayString: "Sabado",
+                pick_hour: "2023-04-02T14:00:00.000+00:00",
+                driver_per_car_id: "64a2985034b1492e3c96b00c",
+                user_id: "64b5bcd249fbbd28ac2ac8c7",
+            });
+    
+            await CarScheduleUserOne.save().then(console.log('Guardado'));
+    
+        }
+    
+        createCarScheduleUser();
+    
+    } catch (e) {
+    
+        console.log(e);
+    
+    }
+    
+}
+*/
+
+
+/*
+for (let index = 0; index < 3; index++) {
+    
+    try {
+
+        const CarScheduleDriver = require('./models/CarScheduleDriver.js');
+        const Stop = require('./models/Stop.js');
+    
+        async function createCarScheduleDriver() {
+    
+            const CarScheduleDriverOne = new CarScheduleDriver({
+                dayDate: "2023-04-02T00:00:00.000+00:00",
+                dayString: "Sabado",
+                driver_per_car_id: "64a2985034b1492e3c96b00c"
+            });
+    
+            await CarScheduleDriverOne.save().then(console.log('Guardado'));
+
+            const StopOne = new Stop({
+                pick_hour: "2023-04-02T14:00:00.000+00:00",
+                car_schedule_driver_id: CarScheduleDriverOne._id,
+                user_id: "64b5bcd249fbbd28ac2ac8c7"
+            });
+
+            await StopOne.save().then(console.log('Guardado'));
+    
+        }
+    
+        createCarScheduleDriver();
+    
+    } catch (e) {
+    
+        console.log(e);
+    
+    }
+    
+}
+*/
+
 
 /*
 try {
@@ -99,7 +202,7 @@ try {
 */
 
 
-
+/*
 try {
 
     const Driver = require('./models/Driver.js');
@@ -135,6 +238,8 @@ try {
     console.log(e.message);
 
 }
+
+*/
 
 /*    
 const ClassSchedule = require('./models/ClassSchedule.js');
